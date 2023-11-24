@@ -1,9 +1,9 @@
-<h4>**Usage:**</h4>
+<h2>**Usage:**</h2>
 
 python3 ssh_brute_force.py
 
 
-<h4>**Requirements:**</h4>
+<h2>**Requirements:**</h2>
 
 pip3 install paramiko
 
