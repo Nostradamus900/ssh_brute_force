@@ -1,4 +1,7 @@
-Simple SSH brute forcer
+Usage:
+
+python3 ssh_brute_force.py
+
 
 Requirements:
 
